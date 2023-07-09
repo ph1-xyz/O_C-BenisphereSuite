@@ -366,7 +366,7 @@ private:
         case GATE_SUM: gfxBitmap(24+ch*32, 35, 3, SUB_TWO);
         case GATE1:
         case GATE2:
-            gfxBitmap(15 + ch*32, 35, 8, METER_ICON);
+            gfxBitmap(15 + ch*32, 35, 8, GATE_ICON);
             break;
 
         default: break;
@@ -388,10 +388,10 @@ private:
             gfxIcon(15 + ch*32, 35, LOOP_ICON);
             break;
         case P_MOD:
-            gfxPrint(15 + ch*32, 35, "p");
+            gfxIcon(15 + ch*32, 35, TOSS_ICON);
             break;
         case RANGE_MOD:
-            gfxIcon(15 + ch*32, 35, UP_DOWN_ICON);
+            gfxIcon(15 + ch*32, 35, RANGE_ICON);
             break;
         case TRANSPOSE1:
             gfxIcon(15 + ch*32, 35, BEND_ICON);
@@ -411,18 +411,18 @@ private:
     void DrawSelector() {
         gfxBitmap(1, 14, 8, LOOP_ICON);
         gfxPrint(12 + pad(10, len_mod), 15, len_mod);
-        gfxPrint(32, 15, "p=");
+        gfxPrint(pad(100, p_mod), p_mod);
         if (cursor == PROB || Gate(1)) { // p unlocked
-            gfxPrint(pad(100, p_mod), p_mod);
+            gfxBitmap(49, 15, 8, TOSS_ICON);
         } else { // p is disabled
-            gfxBitmap(49, 14, 8, LOCK_ICON);
+            gfxBitmap(49, 15, 8, LOCK_ICON);
         }
         gfxBitmap(1, 25, 8, SCALE_ICON);
-        gfxPrint(12, 25, OC::scale_names_short[scale]);
-        gfxBitmap(41, 25, 8, UP_DOWN_ICON);
+        gfxPrint(9, 25, OC::scale_names_short[scale]);
+        gfxBitmap(40, 25, 8, RANGE_ICON);
         gfxPrint(49, 25, range_mod); // APD
 
-        switch ((TM2Cursor)cursor) {
+        switch ((TM2Cursor)cursor){
         default:
             ForEachChannel(ch) DrawOutputMode(ch);
 
@@ -433,17 +433,17 @@ private:
 
             break;
         case SLEW:
-            gfxPrint(1, 35, "Slew:");
-            gfxPrint(smooth_mod);
+            gfxIcon(1, 35, SLEW_ICON);
+            gfxPrint(15, 35, smooth_mod);
 
-            gfxCursor(31, 43, 18);
+            gfxCursor(15, 43, 10);
             break;
         }
 
         switch ((TM2Cursor)cursor) {
             case LENGTH: gfxCursor(13, 23, 12); break;
-            case PROB: gfxCursor(45, 23, 18); break;
-            case SCALE: gfxCursor(12, 33, 25); break;
+            case PROB: gfxCursor(35, 23, 10); break;
+            case SCALE: gfxCursor(9, 33, 25); break;
             case RANGE: gfxCursor(49, 33, 14); break;
 
             case OUT_A:
