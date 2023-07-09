@@ -253,9 +253,9 @@ private:
         if (cursor < CV_DEST1) {
             gfxBitmap(pad_left + 0 * spacing, 15, 8, LOOP_ICON);
         }
-        gfxBitmap(pad_left + 1 * spacing, 15, 8, X_NOTE_ICON);
-        gfxBitmap(pad_left + 2 * spacing, 15, 8, LEFT_RIGHT_ICON);
-        gfxPrint(pad_left + 3 * spacing, 15, "+");
+        gfxBitmap(pad_left + 1 * spacing, 15, 8, PULSES_ICON);
+        gfxBitmap(pad_left + 2 * spacing, 15, 8, ROTATE_ICON);
+        gfxIcon(pad_left + 3 * spacing, 15, OFFSET_ICON);
 
         int y = 15;
         ForEachChannel (ch) {
