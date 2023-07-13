@@ -251,7 +251,7 @@ private:
         const int pad_left = 5;
 
         if (cursor < CV_DEST1) {
-            gfxBitmap(pad_left + 0 * spacing, 15, 8, LOOP_ICON);
+            gfxBitmap(pad_left + 0 * spacing, 15, 8, LENGTH_ICON);
         }
         gfxBitmap(pad_left + 1 * spacing, 15, 8, PULSES_ICON);
         gfxBitmap(pad_left + 2 * spacing, 15, 8, ROTATE_ICON);
