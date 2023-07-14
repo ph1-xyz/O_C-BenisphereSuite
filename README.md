@@ -1,7 +1,10 @@
 "What's the worst that could happen?"
 ===
 
+![Image of Phazerville's Hemisphere with updated icons](iconsExample.png)
+
 ## Phazerville Suite - an active o_C firmware fork
+### Updated Icons
 
 Using [Benisphere](https://github.com/benirose/O_C-BenisphereSuite) as a starting point, this branch takes the Hemisphere Suite in new directions, with several new applets and enhancements to existing ones. I've merged bleeding-edge features from other clever developers, with the goal of cramming as much functionality and flexibility into the nifty dual-applet design as possible!
 
